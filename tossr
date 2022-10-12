@@ -1,0 +1,30 @@
+#!/bin/bash
+
+read -p 'What is your name? ' name
+echo "Hi there $name"
+
+echo "Let's play a game!"
+
+result=$(python3 toss.py)
+
+echo "I am tossing a coin!"
+sleep 1
+echo -n "Tossing"
+sleep 1
+echo -n "."
+sleep 1
+echo -n "."
+sleep 1
+echo -n "."
+
+read -p "What is the result? Heads[0] or Tails[1]? " choice
+
+if [ $choice -eq $result ]
+then
+	echo "Yes! You are correct!"
+
+else
+	echo "No! You lost!"
+
+fi
+
